@@ -29,6 +29,7 @@ body {
     border-collapse: collapse;
     width: 300px;
     margin-bottom: 20px;
+    background-color: white;
 }
 
 th, td {
