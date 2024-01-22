@@ -5,9 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.querySelector('#nextButton');
     const selectedDateDisplay = document.querySelector('#selectedDateDisplay');
 
-    let currentMonth = new Date().getMonth();
-    let currentYear = new Date().getFullYear();
-    let selectedDates = [new Date(currentYear, currentMonth, new Date().getDate())];
+    let currentDate = new Date();
+    let currentMonth = currentDate.getMonth();
+    let currentYear = currentDate.getFullYear();
+    let selectedDates = [currentDate];
 
     function generateCalendar() {
         calendarBody.innerHTML = '';
@@ -50,15 +51,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateSelectedDateStyles() {
         const allCells = document.querySelectorAll('#calendar tbody tr td');
-        allCells.forEach(cell => cell.classList.remove('selected'));
+        allCells.forEach(cell => {
+            cell.classList.remove('selected');
+            const day = parseInt(cell.textContent);
 
-        selectedDates.forEach(date => {
-            const day = date.getDate();
-            const matchingCell = Array.from(allCells).find(cell => !cell.classList.contains('disabled') && parseInt(cell.textContent) === day);
-
-            if (matchingCell) {
-                matchingCell.classList.add('selected');
+            if (isSelectedDate(new Date(currentYear, currentMonth, day))) {
+                cell.classList.add('selected');
             }
+            
         });
     }
 
