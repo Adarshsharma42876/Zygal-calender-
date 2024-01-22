@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: coral;
+}
+
+#calendar {
+    border-collapse: collapse;
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 5px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+td {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+td:hover {
+    background-color: #f9f9f9;
+}
+
+.selected {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+button {
+    width: 170px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #0742c2;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+p{
+    text-align: center;
+   
+   ;
+}
+
+
+#selectedDateDisplay {
+    width: 335px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.selected {
+    background-color:blue;
+    color: #fff; 
+    
+}
